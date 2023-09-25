@@ -47,15 +47,38 @@ namespace CalculatorTestProject
         }
 
 
-        //testo la funzione Divide della classe Calculator
+        // testo la funzione Divide della classe Calculator 
 
         [Test]
         [TestCase(20, 0)]
         [TestCase(0, 0)]
-        public void TestDivide(float x, float y)
+        public void TestDivideZero(float x, float y)
         {
             Assert.Throws<ArgumentException>(() =>  calculator.Divide(x, y));
 
+        }
+
+        [Test]
+        [TestCase(16, 2, 8)]
+        [TestCase(20, 2, 10)]
+        [TestCase(20, 5, 8)]
+
+        public void TestDivide(float x, float y, float result)
+        {
+            Assert.That(calculator.Divide(x, y), Is.EqualTo(result));
+        }
+
+
+        // testo la funzione Multiply della classe Calculator
+
+        [Test]
+        [TestCase(8, 2, 16)]
+        [TestCase(5, 3, 15)]
+        [TestCase(7, 9, 20)]
+
+        public void TestMultiply(float x, float y, float result)
+        {
+            Assert.That(calculator.Multiply(x, y), Is.EqualTo(result));
         }
     }
 }
