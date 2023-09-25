@@ -35,6 +35,15 @@ namespace CalculatorTestProject
 
         }
 
+        [Test]
+        [TestCase(16, 2, 8)]
+        [TestCase(8, 2, 10)]
+        [TestCase(15, 3, 18)]
+        public void TestAddNumbers(float x, float y, float result)
+        {
+            Assert.That(calculator.Add(x, y), Is.EqualTo(result));
+        }
+
         // testo la funzione Subtract della classe Calculator
 
         [Test]
@@ -54,8 +63,7 @@ namespace CalculatorTestProject
         [TestCase(0, 0)]
         public void TestDivideZero(float x, float y)
         {
-            Assert.Throws<ArgumentException>(() =>  calculator.Divide(x, y));
-
+            Assert.Throws<ArgumentException>(() => calculator.Divide(x, y));
         }
 
         [Test]
