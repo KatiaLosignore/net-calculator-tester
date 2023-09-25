@@ -64,6 +64,7 @@ namespace CalculatorTestProject
         public void TestDivideZero(float x, float y)
         {
             Assert.Throws<ArgumentException>(() => calculator.Divide(x, y));
+
         }
 
         [Test]

@@ -26,7 +26,7 @@ namespace net_calculator_tester
         {
             if (num2 == 0)
             {
-                throw new Exception("Non puoi dividere per il numero 0");
+                throw new ArgumentException("Non puoi dividere per il numero 0");
             }
             return num1 / num2;
         }
