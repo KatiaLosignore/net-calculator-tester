@@ -14,6 +14,9 @@ namespace CalculatorTestProject
             calculator = new Calculator();
         }
 
+
+        // testo la funzione Add della classe Calculator
+
         [Test]
         public void TestAdd()
         {
@@ -32,6 +35,7 @@ namespace CalculatorTestProject
 
         }
 
+        // testo la funzione Subtract della classe Calculator
 
         [Test]
         [TestCase(4, 2, 2)]
@@ -41,8 +45,17 @@ namespace CalculatorTestProject
         {
             Assert.That(calculator.Subtract(x, y), Is.EqualTo(result));
         }
-    
 
 
+        //testo la funzione Divide della classe Calculator
+
+        [Test]
+        [TestCase(20, 0)]
+        [TestCase(0, 0)]
+        public void TestDivide(float x, float y)
+        {
+            Assert.Throws<ArgumentException>(() =>  calculator.Divide(x, y));
+
+        }
     }
 }
