@@ -20,8 +20,10 @@ namespace CalculatorTestProject
             float outputReale = Calculator.Add(x, y);
 
             // confronto output funzione con output atteso
-            Assert.True(outputReale == outputAtteso, $"Il risultato atteso era {outputAtteso} mentre invece abbiamo {outputReale}");
+            Assert.True(outputReale == outputAtteso, $"Il risultato atteso era {outputAtteso} mentre invece abbiamo {outputReale}");     
 
         }
+
+        
     }
 }
